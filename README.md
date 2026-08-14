@@ -33,8 +33,6 @@ BRCA1     2.250000
  KRAS     2.285714
 ```
 
-![Gene Expression Plot](gene_expression_plot.png)
-
 ## Tech Stack
 
 - Python 3
@@ -58,11 +56,5 @@ gene-expression-analysis/
 ├── requirements.txt              # Dependencies
 └── README.md
 ```
-
-## Notes
-
-- Dataset is a small illustrative sample (5 genes) — not real patient data.
-- Fold change threshold (1.8) is adjustable via the `threshold` parameter in
-  `get_high_expression_genes()`.
 - Built as part of a bioinformatics portfolio exploring gene expression
   analysis workflows.
