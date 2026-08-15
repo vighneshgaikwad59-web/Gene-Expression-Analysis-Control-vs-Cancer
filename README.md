@@ -55,6 +55,3 @@ gene-expression-analysis/
 ├── gene_expression_plot.png      # Generated output chart
 ├── requirements.txt              # Dependencies
 └── README.md
-```
-- Built as part of a bioinformatics portfolio exploring gene expression
-  analysis workflows.
