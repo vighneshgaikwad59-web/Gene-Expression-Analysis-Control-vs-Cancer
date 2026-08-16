@@ -2,14 +2,14 @@
 
 A small Python script that analyzes fold-change in gene expression between
 control and cancer samples for five well-known cancer-associated genes
-(**TP53, BRCA1, EGFR, MYC, KRAS**), flags significantly upregulated genes,
-and visualizes the comparison as a grouped bar chart.
+(TP53, BRCA1, EGFR, MYC, KRAS), flags significantly upregulated genes, and
+visualizes the comparison as a grouped bar chart.
 
 ## What it does
 
 1. Loads expression values (Control vs Cancer) for each gene into a pandas DataFrame.
-2. Calculates **Fold Change** = `Cancer / Control` for each gene.
-3. Filters genes with **Fold Change > 1.8** as "highly expressed" (significantly upregulated in cancer).
+2. Calculates Fold Change = `Cancer / Control` for each gene.
+3. Filters genes with Fold Change > 1.8 as "highly expressed" (significantly upregulated in cancer).
 4. Plots a grouped bar chart comparing Control vs Cancer expression per gene.
 
 ## Example Output
@@ -35,14 +35,14 @@ BRCA1     2.250000
 
 ## Tech Stack
 
-- Python 3
-- pandas
-- numpy
-- matplotlib
+* Python 3
+* pandas
+* numpy
+* matplotlib
 
 ## How to Run
 
-```bash
+```
 pip install -r requirements.txt
 python gene_expression_analysis.py
 ```
@@ -55,3 +55,12 @@ gene-expression-analysis/
 ├── gene_expression_plot.png      # Generated output chart
 ├── requirements.txt              # Dependencies
 └── README.md
+```
+
+## Notes
+
+This project uses illustrative, hard-coded expression values for
+demonstration purposes. To analyze real data, replace the `data` dictionary
+in `gene_expression_analysis.py` with values loaded from your own dataset
+(e.g. a CSV of RNA-seq or microarray expression values), or swap in a
+`pd.read_csv(...)` call in place of the manual dictionary.
