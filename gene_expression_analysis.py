@@ -1,19 +1,9 @@
-"""
-Gene Expression Analysis: Control vs Cancer
---------------------------------------------
-Analyzes fold-change in gene expression between control and cancer samples
-for five well-known cancer-associated genes (TP53, BRCA1, EGFR, MYC, KRAS),
-flags significantly upregulated genes, and visualizes the comparison as a
-grouped bar chart.
-"""
+
 
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-# ---------------------------------------------------------
-# 1. Load expression data into a DataFrame
-# ---------------------------------------------------------
 data = {
     "Gene": ["TP53", "BRCA1", "EGFR", "MYC", "KRAS"],
     "Control": [12, 8, 15, 10, 7],
@@ -22,26 +12,19 @@ data = {
 
 df = pd.DataFrame(data)
 
-# ---------------------------------------------------------
-# 2. Calculate Fold Change = Cancer / Control
-# ---------------------------------------------------------
+
 df["Fold_Change"] = df["Cancer"] / df["Control"]
 
 print("Gene Expression Data:\n")
 print(df.to_string(index=False))
 
-# ---------------------------------------------------------
-# 3. Filter genes with Fold Change > 1.8 (upregulated in cancer)
-# ---------------------------------------------------------
 FOLD_CHANGE_THRESHOLD = 1.8
 highly_expressed = df[df["Fold_Change"] > FOLD_CHANGE_THRESHOLD][["Gene", "Fold_Change"]]
 
 print(f"\nHighly Expressed Genes (Fold Change > {FOLD_CHANGE_THRESHOLD}):")
 print(highly_expressed.to_string(index=False))
 
-# ---------------------------------------------------------
-# 4. Plot grouped bar chart: Control vs Cancer per gene
-# ---------------------------------------------------------
+
 genes = df["Gene"].to_numpy()
 control_vals = df["Control"].to_numpy()
 cancer_vals = df["Cancer"].to_numpy()
