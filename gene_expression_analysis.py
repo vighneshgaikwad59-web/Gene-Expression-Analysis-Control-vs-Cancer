@@ -39,7 +39,6 @@ bars_control = ax.bar(x - bar_width / 2, control_vals, bar_width,
 bars_cancer = ax.bar(x + bar_width / 2, cancer_vals, bar_width,
                       label="Cancer", color="#C44E52")
 
-# Annotate bars with their values
 for bars in (bars_control, bars_cancer):
     for bar in bars:
         height = bar.get_height()
